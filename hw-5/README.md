@@ -1,7 +1,10 @@
 
 # Home Work nr.5
 
-You can find two classes in [methods](methods) directory. [Test](..) you can find [later](..).
+You can find two classes in [methods](methods) directory. [Test](testPartThree.txt) you can find in the current directory.<br>
+
+[Main](Main.java) file contains answers for first two tasks.<br>
+[Script](comp_run.sh) compiles and run solution.
 
 ## Task One
 
@@ -13,4 +16,4 @@ You can find two classes in [methods](methods) directory. [Test](..) you can fin
 
 ## Task Three
 
-[Test](..) you will find later.
+[Test](testPartThree.txt) is attached.
