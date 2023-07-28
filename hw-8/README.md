@@ -13,7 +13,7 @@
 
 ## Part Two
 
-[Rising Array](methods/RisingArray.class) class has:
+[Rising Array](methods/RisingArray.java) class has:
 * `private int Arr[]` - array will be used to keep 5 numbers.
 * `private void generateRandArr()` - method generates 5 random numbers.
 * `public RisingArray()` - constructor. Generates random array.
