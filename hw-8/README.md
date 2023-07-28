@@ -18,7 +18,7 @@
 * `private void generateRandArr()` - method generates 5 random numbers.
 * `public RisingArray()` - constructor. Generates random array.
 * `public void printArray()` - method prints array.
-* `public boolean checkRising()` - boolean method checks if array ir rising or false.
+* `public boolean checkRising()` - boolean method checks if array is rising or not.
 * `public void generateRising()` - method generates always rising array of random numbers.
 * `public void ifRising()` - prints is the array rising or not.
 
