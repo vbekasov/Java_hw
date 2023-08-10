@@ -4,9 +4,9 @@ import java.util.Arrays;
 //import java.util.Random;
 
 public class OneMissing {
-    private int arr[];
-    private int length;
-    private int excluded;
+    private       int arr[];
+    private       int length;
+    private       int excluded;
     private final byte bm = -128;
     
     public OneMissing() {
