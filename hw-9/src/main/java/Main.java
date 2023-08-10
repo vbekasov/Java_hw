@@ -4,9 +4,7 @@ import methods.OneMissing;
 import methods.SQLParser;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("HW-9\n\n---Part One---\n");
-
+    private static void checkPartOne() {
         OneMissing testObj = new OneMissing(30);
         testObj.printArray();
         int miss = testObj.getMissing();
@@ -21,6 +19,11 @@ public class Main {
            while (checkArr[++i] == true) {}
            i++;
         System.out.println("Expected : " + miss + " | Actual : " + i);
+    }
+    public static void main(String[] args) {
+        System.out.println("HW-9\n\n---Part One---\n");
+
+        checkPartOne();
 
 
         System.out.println("\n---Part Two---");

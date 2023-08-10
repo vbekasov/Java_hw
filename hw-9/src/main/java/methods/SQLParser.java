@@ -1,7 +1,6 @@
 package methods;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SQLParser {
     private ArrayList<Object> inQuery;
