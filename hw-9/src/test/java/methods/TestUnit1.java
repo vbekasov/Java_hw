@@ -16,10 +16,8 @@ public class TestUnit1 {
     @Test
     void checkExcluded() {
         int i = 0;
-        System.out.println("some text");
 
-        for ( ; i < 100; i++) {
-            System.out.println("some text");
+        for (int j = 0; j < 100; j++) {
             
             int tmp[] = garbageCollect(i+10);
 
