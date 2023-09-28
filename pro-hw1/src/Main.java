@@ -18,17 +18,14 @@ public class Main {
 
         System.out.println("\n---Task 1.2---");
         Auto[] autoArr = new Auto[3];
-        autoArr[0] = Factory.productAuto(
-                AutoType.LORRY, 321,
-                "VOLVO", "MOD09"
+        autoArr[0] = Factory.productLorry(
+                321,"VOLVO", "MOD09"
         );
-        autoArr[1] = Factory.productAuto(
-                AutoType.SEDAN, 123,
-                "BMW", "X5"
+        autoArr[1] = Factory.productSedan(
+                123, "BMW", "X5"
         );
-        autoArr[2] = Factory.productAuto(
-                AutoType.SPORTS_CAR, 231,
-                "Jaguar", "Type E"
+        autoArr[2] = Factory.productSportsCar(
+                231, "Jaguar", "Type E"
         );
         for (Auto it : autoArr) {
             System.out.println(it);
