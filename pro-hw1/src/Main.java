@@ -33,7 +33,8 @@ public class Main {
 
         System.out.println("\n---Task 2---");
         Student person1 = new Student(
-                "Ivan", "Ivanov", 3);
+                "Ivan", "Ivanov", 1);
+        //person1.setGroupId(-1);
         person1.increaseGroup();
         System.out.println(person1.toString());
         Student person2 = new Student(person1);
