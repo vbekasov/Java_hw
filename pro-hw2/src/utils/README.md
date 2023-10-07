@@ -11,9 +11,9 @@
    а `splitByFirst(“Люди! Я люблю Java! Ура!”)` вернёт массив строк `[“Люди”, “ Я люблю Java”, “ Ура”, “”]`<br>
 4. `isNumeric` – проверяет, состоит ли данная строка только из цифр
    (может быть распознана как целое неотрицательное число)<br>
-* Используйте все методы в коде метода [main](./src/Main.java).
+* Используйте все методы в коде метода [main](./MainUtils.java).
 ---
-## Implementation in [Main](./../Main.java)
+## Implementation in [Main](./MainUtils.java)
 ```
 System.out.println("---Tas One---\n");
 
