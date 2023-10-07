@@ -6,7 +6,7 @@ Table of contents:
 * [Task two directory](./src/company)
 * [Task two README](./src/company/README.md)
 
-## [Task One](./src/utils/UtilsStrings.java)
+## [Task One](./src/utils)
  1 уровень сложности:<br>
  №1<br> 
  Создайте утилитарный класс, который будет хранить полезные методы работы со строками.

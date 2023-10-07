@@ -42,10 +42,8 @@ public class Organization {
     }
 
     public void addDirectorByDepartmentId(int id, String firstName, String lastName, int salary) {
-        //for (int i = 0; i < departments.size(); i++) {
         for (Department i: departments) {
             if (i.getId() == id) {
-                //Department tmp = departments.get(i);
                 int newId;
                 if (i.director != null)
                     newId = i.director.getId() + 1;
