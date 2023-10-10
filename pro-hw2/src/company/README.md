@@ -31,7 +31,7 @@ ID of previous director.
 * `public void addEmployeeByDepartmentId(int id, String firstName, String lastName, int salary, StuffRole role)` -
 adds employee to department by ID. Sets `employeeId=departmentID*1000 + 1`
 , if the first employee in department. Next employee gain ID by increasing
-ID of previous employee.
+ID of previous employee. Employee can not be added before the first director.
 * More support methods you can find [here.](./Organization.java)
 ---
 ## Implementation in [MainCompany](./MainCompany.java)
