@@ -1,7 +1,7 @@
 package shape.methods;
 
 public enum ShapesList {
-    CYCLE,
+    CIRCLE,
     RECTANGLE,
     TRIANGLE
 }

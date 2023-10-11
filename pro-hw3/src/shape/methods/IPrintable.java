@@ -1,14 +1,16 @@
 package shape.methods;
 
-public interface IPrintable {
-    public abstract void print();
+import java.util.Locale;
 
-    public static Shape shapeFactory(String uInput) {
+public interface IPrintable {
+    void print();
+
+    static IPrintable shapeFactory(String uInput) {
         String[] factoryStr = UtilJsonParser.parseJson(uInput);
-        Shape outShape = switch (factoryStr[1].toUpperCase()){
-            case "CYCLE" -> new Cycle("CYCLE", Integer.parseInt(factoryStr[3]));
+        return switch (factoryStr[1].toUpperCase(Locale.ROOT)){
+            case "CIRCLE" -> new Circle("CIRCLE", factoryStr[3]);
+            case "RECTANGLE" -> new Rectangle("RECTANGLE", factoryStr[3]);
             default -> null;
         };
-        return outShape;
     }
 }

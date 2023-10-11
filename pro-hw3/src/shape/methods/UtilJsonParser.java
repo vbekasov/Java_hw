@@ -15,12 +15,11 @@ public class UtilJsonParser {
         StringBuilder strBuf = new StringBuilder(str.length());
 
         int     j;
-        char    close;
         for (int i = 0; i < str.length(); i++) {
             if (inStr[i] == '\'' || inStr[i] == '[') {
-                close = (inStr[i] == '\'') ? '\'' : ']';
                 strBuf.delete(0, strBuf.length());
-                for (j = 0; inStr[j+i+1] != close; j++)
+                for (j = 0; inStr[j+i+1] != ((inStr[i] == '\'') ? '\'' : ']')
+                        ; j++)
                     strBuf.append(inStr[j+i+1]);
 
                 i = j+i+1;
