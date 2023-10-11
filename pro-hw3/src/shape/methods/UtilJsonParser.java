@@ -27,6 +27,9 @@ public class UtilJsonParser {
             }
         }
 
+        if (strArr.isEmpty())
+            return null;
+
         String[] strOut = new String[strArr.size()];
         for (j = 0; j < strArr.size(); j++)
             strOut[j] = strArr.get(j);
