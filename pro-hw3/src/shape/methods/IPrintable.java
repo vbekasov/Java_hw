@@ -1,5 +1,6 @@
 package shape.methods;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public interface IPrintable {
@@ -16,6 +17,7 @@ public interface IPrintable {
         return switch (factoryStr[1].toUpperCase(Locale.ROOT)){
             case "CIRCLE" -> new Circle("CIRCLE", factoryStr[3]);
             case "RECTANGLE" -> new Rectangle("RECTANGLE", factoryStr[3]);
+            case "TRIANGLE" -> new Triangle("TRIANGLE", factoryStr[3]);
             default -> new ErrorShape();
         };
     }

@@ -22,6 +22,11 @@ public class Rectangle extends Shape implements IPrintable{
 
     @Override
     public void print() {
+        if (sides[0] <= 0 || sides[1] <= 0) {
+            System.out.println("Error Rectangle");
+            return ;
+        }
+
         System.out.printf(
                 "Name: %s, Area: %d, Perimeter: %d, " +
                         "Diagonal %f, Long side %d, Short side %d\n",
