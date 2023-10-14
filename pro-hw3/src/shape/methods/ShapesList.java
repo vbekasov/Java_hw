@@ -4,5 +4,6 @@ public enum ShapesList {
     CIRCLE,
     RECTANGLE,
     TRIANGLE,
+    CUBE,
     ERROR,
 }

@@ -1,8 +1,5 @@
 package shape.methods;
 
-import java.util.Arrays;
-import java.util.Date;
-
 public class Triangle extends Shape implements IPrintable{
     private final Integer[] sides;
     private final Double[]  angles;

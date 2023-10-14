@@ -18,6 +18,7 @@ public interface IPrintable {
             case "CIRCLE" -> new Circle("CIRCLE", factoryStr[3]);
             case "RECTANGLE" -> new Rectangle("RECTANGLE", factoryStr[3]);
             case "TRIANGLE" -> new Triangle("TRIANGLE", factoryStr[3]);
+            case "CUBE" -> new Cube("CUBE", factoryStr[3]);
             default -> new ErrorShape();
         };
     }
