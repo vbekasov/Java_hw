@@ -1,7 +1,9 @@
 # Homework 4
 
 ## Table of Contents
-* [Source files](./src)
+* [Rows](./src/rows)
+* [Numbers](./src/numbers)
+* [Students](./src/students)
 
 ## Tasks
 
