@@ -16,7 +16,6 @@ public class Single {
         int len     = arr.length - 1;
         int stop    = len;
         int place = stop / 2;
-        int tmp;
 
         if (arr[0] != arr[1])
             return arr[0];
@@ -30,12 +29,11 @@ public class Single {
             if (arr[place] == arr[place - 1]) {
                 // move right
                 start = place;
-                place = start + (stop - start) / 2;
             } else {
                 // move left
                 stop = place;
-                place = start + (stop - start) / 2 ;
             }
+            place = start + (stop - start) / 2;
         }
 
         return null;
