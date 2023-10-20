@@ -18,3 +18,12 @@ public class MainFractions {
         System.out.println((f2 == f5) + " " + f2.equals(f5));
     }
 }
+
+/* Output
+false true
+false
+127
+127
+false true
+false false
+ */
