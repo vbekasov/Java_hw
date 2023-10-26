@@ -3,6 +3,7 @@
 ---
 ## Table of Contents 
 * [FullName](./src/namesTree)
+* [Collections](./src/hwcollections/MainCollect.java)
 * [Iterator](./src/iterators/MainIterator.java)
 ---
 ## Tasks

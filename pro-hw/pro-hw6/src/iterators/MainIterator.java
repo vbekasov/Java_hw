@@ -1,5 +1,6 @@
 package iterators;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class MainIterator {
@@ -14,13 +15,15 @@ public class MainIterator {
     }
 
     static class MyIter implements Iterator<Integer> {
-        private ArrayList<Integer> inner;
+        private List<Integer> inner;
         private int count = 0;
 
-        public MyIter(ArrayList<Integer> inner) {
-            this.inner = inner;
+        public MyIter(int[] inner) {
+            this.inner = new ArrayList<>(inner.length);
+            for (Integer it : inner)
+                this.inner.add(it);
+
             this.inner.sort(Collections.reverseOrder());
-            System.out.println(this.inner);
         }
 
         @Override
@@ -36,13 +39,14 @@ public class MainIterator {
         }
     }
 
-    private static ArrayList<Integer> generateIntArr(int len) {
+    private static int[] generateIntArr(int len) {
         Random rnd = new Random();
-        ArrayList<Integer> ret = new ArrayList<>(len);
+        int[] ret = new int[len];
 
         while (--len >= 0)
-            ret.add(rnd.nextInt(-100, 101));
+            ret[len] = rnd.nextInt(-100, 101);
 
+        System.out.println(Arrays.toString(ret));
         return ret;
     }
 }
