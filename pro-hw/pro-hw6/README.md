@@ -14,7 +14,7 @@
 [компаратор](./src/namesTree/names/FullNameCompare.java),
 который сравнивает экземпляры по полю `firstName`. Выведите множество в консоль.
 <br><br>
-2. Создайте [коллекцию](./src/iterators/MainIterator.java)
+2. Создайте [коллекцию](./src/hwcollections/MainCollect.java)
  `(List или Set)`, добавьте несколько элементов.
 Организовать цикл `while` по коллекции с помощью итератора.
 Организовать цикл `for` (не путать с foreach!) по коллекции с помощью итератора.
