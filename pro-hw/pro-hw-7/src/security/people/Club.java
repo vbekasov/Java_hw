@@ -3,7 +3,7 @@ package security.people;
 import java.util.*;
 
 public class Club {
-    private static Set<Person> inside = new HashSet<>();
+    private static final Set<Person> inside = new HashSet<>();
 
     private Club() {}
 
