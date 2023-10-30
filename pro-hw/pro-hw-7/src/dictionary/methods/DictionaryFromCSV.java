@@ -13,35 +13,17 @@ public class DictionaryFromCSV {
         LinkedList<String> tmp = DictionaryFromCSV.readCSV();
         String[] str;
         dictionary = new TreeMap<>(charComparator());
-        TreeMap<String, String> tmpTree;
-        int counter = 0;
+        int count = 0;
 
         for (String it : tmp) {
             str = DictionaryFromCSV.parseLine(it);
-            if (!dictionary.containsKey(str[0].charAt(0))) {
-                tmpTree = new TreeMap<>(strComparator());
-                tmpTree.put(str[0], str[1]);
-                dictionary.put(str[0].charAt(0),
-                        tmpTree
-                        );
-                counter++;
-            }
-            else {
-                if (dictionary.get(str[0].charAt(0)).containsKey(str[0])) {
-                    dictionary.get(str[0].charAt(0)).put(str[0],
-                            dictionary.get(str[0].charAt(0)).get(str[0]) + str[0] + str[1]);
-                } else {
-                    dictionary.get(str[0].charAt(0)).put(str[0], str[1]);
-                    counter++;
-                }
-            }
+            count += addDefinition(str);
         }
-        System.out.println("Dictionary Generated. Total : " + counter);
+        System.out.println("Dictionary generation finished. Total : " + count);
     }
 
     private static LinkedList<String> readCSV() {
         LinkedList<String> csvLines = new LinkedList<>();
-        String str;
 
         try {
             Scanner scanner = new Scanner(new File("src/dictionary/resources/muellerdict_words.csv"));
@@ -59,7 +41,6 @@ public class DictionaryFromCSV {
      private static String[] parseLine(String line) {
         String[] str = new String[2];
         StringBuilder tmp = new StringBuilder(line.length());
-
         CharacterIterator it = new StringCharacterIterator(line);
 
         while (it.current() != CharacterIterator.DONE && it.current() != ',') {
@@ -113,19 +94,46 @@ public class DictionaryFromCSV {
 
     public void startTranslate () {
         Scanner scn = new Scanner(System.in);
-        String key = "";
-        String val = "";
+        String[] str = new String[2];
+        str[0] = str[1] = "";
         String stop = "stopTranslate";
-        while (!key.equals(stop)) {
+        while (!str[0].equals(stop)) {
             System.out.print("Enter word : ");
-            key = scn.nextLine();
-            val = findWord(key);
-            if (val != null && !key.equals(stop))
-                System.out.println(val);
-            else if (val == null && !key.equals(stop)){
+            str[0] = scn.nextLine();
+            str[1] = findWord(str[0]);
+            if (str[1] != null && !str[0].equals(stop))
+                System.out.println(str[1]);
+            else if (str[1] == null && !str[0].equals(stop)){
                 System.out.print("Enter new definition : ");
+                str[1] = scn.nextLine();
+                addDefinition(str);
             }
         }
 
+    }
+
+    private int addDefinition(String[] str) {
+        TreeMap<String, String> tmpTree;
+        int counter = 0;
+
+        if (!dictionary.containsKey(str[0].charAt(0))) {
+            tmpTree = new TreeMap<>(strComparator());
+            tmpTree.put(str[0], str[1]);
+            dictionary.put(str[0].charAt(0),
+                    tmpTree
+            );
+            counter++;
+        }
+        else {
+            if (dictionary.get(str[0].charAt(0)).containsKey(str[0])) {
+                dictionary.get(str[0].charAt(0)).put(str[0],
+                        dictionary.get(str[0].charAt(0)).get(str[0]) + str[0] + str[1]);
+            } else {
+                dictionary.get(str[0].charAt(0)).put(str[0], str[1]);
+                counter++;
+            }
+        }
+
+        return counter;
     }
 }
