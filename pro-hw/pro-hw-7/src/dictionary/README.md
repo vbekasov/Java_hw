@@ -3,7 +3,7 @@
 ### Table of contents
 
 * [Dictionary generator](./methods/DictionaryFromCSV.java)
-* [Dictionary in CSV](./resources/muellerdict_words.csv)
+* [Dictionary in CSV](./resources)
 * [Main file](./MainDictionary.java)
 
 ### Task
@@ -33,4 +33,4 @@ The aim of this structure is to accelerate search (the dictionary contains 47172
   * If a word does not exist in the sup-tree, the program puts the word and description as key and description.
   * If the word is already in the tree, the method stacks the second description to exist.
 
-### [CSV Dictionary](./resources/muellerdict_words.csv)
+### [CSV Dictionary](./resources)
