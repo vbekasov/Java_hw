@@ -7,22 +7,24 @@ import java.text.StringCharacterIterator;
 import java.util.*;
 import java.lang.*;
 
-public class ParseCSV {
+public class DictionaryFromCSV {
     private final TreeMap<Character, TreeMap<String, String>> dictionary;
-    public ParseCSV() {
-        LinkedList<String> tmp = ParseCSV.readCSV();
+    public DictionaryFromCSV() {
+        LinkedList<String> tmp = DictionaryFromCSV.readCSV();
         String[] str;
         dictionary = new TreeMap<>(charComparator());
         TreeMap<String, String> tmpTree;
+        int counter = 0;
 
         for (String it : tmp) {
-            str = ParseCSV.parseLine(it);
+            str = DictionaryFromCSV.parseLine(it);
             if (!dictionary.containsKey(str[0].charAt(0))) {
                 tmpTree = new TreeMap<>(strComparator());
                 tmpTree.put(str[0], str[1]);
                 dictionary.put(str[0].charAt(0),
                         tmpTree
                         );
+                counter++;
             }
             else {
                 if (dictionary.get(str[0].charAt(0)).containsKey(str[0])) {
@@ -30,20 +32,23 @@ public class ParseCSV {
                             dictionary.get(str[0].charAt(0)).get(str[0]) + str[0] + str[1]);
                 } else {
                     dictionary.get(str[0].charAt(0)).put(str[0], str[1]);
+                    counter++;
                 }
             }
         }
+        System.out.println("Dictionary Generated. Total : " + counter);
     }
 
     private static LinkedList<String> readCSV() {
         LinkedList<String> csvLines = new LinkedList<>();
+        String str;
 
         try {
             Scanner scanner = new Scanner(new File("src/dictionary/resources/muellerdict_words.csv"));
-            int i = 40;
-            while (--i >= 0) {
+
+            while (scanner.hasNextLine())
                 csvLines.add(scanner.nextLine());
-            }
+
             scanner.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -96,12 +101,31 @@ public class ParseCSV {
     }
 
     public void printTree() {
-        int total = 0;
         for (Map.Entry<Character, TreeMap<String, String>> it:
         dictionary.entrySet()) {
             System.out.println(it.getKey() + " " + it.getValue());
-            total += it.getValue().size();
         }
-        System.out.println(total);
+    }
+
+    public String findWord(String word) {
+        return dictionary.get(word.charAt(0)).get(word);
+    }
+
+    public void startTranslate () {
+        Scanner scn = new Scanner(System.in);
+        String key = "";
+        String val = "";
+        String stop = "stopTranslate";
+        while (!key.equals(stop)) {
+            System.out.print("Enter word : ");
+            key = scn.nextLine();
+            val = findWord(key);
+            if (val != null && !key.equals(stop))
+                System.out.println(val);
+            else if (val == null && !key.equals(stop)){
+                System.out.print("Enter new definition : ");
+            }
+        }
+
     }
 }

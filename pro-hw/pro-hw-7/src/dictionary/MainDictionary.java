@@ -1,15 +1,12 @@
 package dictionary;
 
-import dictionary.methods.ParseCSV;
-
-import java.util.Arrays;
-import java.util.LinkedList;
+import dictionary.methods.DictionaryFromCSV;
 
 public class MainDictionary {
     public static void main(String[] args) {
         System.out.println("Works");
 
-        ParseCSV tmp = new ParseCSV();
-        //tmp.printTree();
+        DictionaryFromCSV dictionary = new DictionaryFromCSV();
+        dictionary.startTranslate();
     }
 }
