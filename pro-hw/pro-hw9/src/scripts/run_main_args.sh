@@ -9,6 +9,4 @@ do
     FLAGS=$FLAGS' '$user;
 done
 
-P=`pwd`;
-echo $P;
 java $P/Main.java $FLAGS;
