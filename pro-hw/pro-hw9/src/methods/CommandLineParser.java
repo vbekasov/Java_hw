@@ -27,8 +27,11 @@ public class CommandLineParser {
                 throw new ZeroArgs("Wrong Argument.");
         }
 
-        if (received.contains("-s") && received.contains("-i"))
+        if (!(!received.contains("-s") ^ !received.contains("-i")))
             throw new ZeroArgs("Wrong Argument.");
+
+        if (!(received.contains("-a") || received.contains("-d")))
+            received.add("-a");
 
         LinkedList<String> commands = new LinkedList<>();
         commands.add(args[0]);
@@ -42,10 +45,7 @@ public class CommandLineParser {
         if (str.length() == 2)
             return str.charAt(0) == '-' && flags.contains(str.charAt(1));
         else
-            if ((str.contains("out") ^ str.contains("in") ) && str.contains(".txt"))
-                return true;
-            else
-                return false;
+            return (str.contains("out") ^ str.contains("in")) && str.contains(".txt");
 
     }
 }
