@@ -4,8 +4,8 @@
 ## Table of Contents
 * [Tasks One and Two](./src/main/java/homework8/TwoTasksUtil.java)
 * [Tests for Two Tasks](./src/test/java/homework8/TwoTasksUtilTest.java)
----
-* [Task Three](./)
+* [Task Three](./src/main/java/study)
+
 ## Tasks
 1. Напишите параметризированный метод для обмена позициями двух
 разных элементов в массиве. Метод принимает параметризированный

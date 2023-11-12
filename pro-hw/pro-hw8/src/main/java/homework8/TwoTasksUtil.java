@@ -1,9 +1,6 @@
 package homework8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Homework 8. Tasks One and Two.
@@ -31,24 +28,18 @@ public class TwoTasksUtil {
         return arr;
     }
 
-    public static <T>  T findMaxInRange(List<? extends Comparator> arr, T lRange, T rRange) {
-        T max = (T) arr.get(0);
+    public static <T extends Comparable<T>>  T findMaxInRange(List<T> arr, T lRange, T rRange) {
+        T max = null;
 
-        for (Comparator it : arr)
-            if (it.compare(it, lRange) >= 0 && it.compare(it, rRange) < 0 &&
-                    it.compare(it, max) > 0)
-                max = (T) it;
+        for (T it : arr)
+            if (it.compareTo(lRange) >= 0 && it.compareTo(rRange) < 0)
+                if (max != null && it.compareTo(max) > 0)
+                    max = it;
+                else if (max == null)
+                    max = it;
 
+        return max;
     }
 
-    public static void main(String[] args) {
-        List<Integer> tst = new ArrayList<>();
-        tst.add(Integer.valueOf(1));
-        tst.add(2);
-        //tst.add(3);
-        //tst.add(4);
-        //tst.add(5);
-
-        System.out.println(findMaxInRange(tst, Integer.parseInt("-2"), 3));
-    }
+    private void main(String[] args) {}
 }
