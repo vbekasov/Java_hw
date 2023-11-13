@@ -2,7 +2,9 @@
 
 ---
 ## Table of Contents
-
+* [JavaDoc](./org/example/methods/package-summary.html)
+* [Main](./src/main/java/org/example/Main.java)
+* [methods](./src/main/java/org/example/methods)
 ---
 ## Tasks
 
@@ -17,5 +19,6 @@
 препятствие уменьшает показатель прочности на случайную величину у случайной 
 части велосипеда. Программа выполняется,
 пока у велосипеда нет сломанных частей.<br><br>
-4. Напишите JavaDoc для написанных классов и  методов. Одним из способов 
+4. Напишите [JavaDoc](./org/example/methods/package-summary.html)
+5. для написанных классов и  методов. Одним из способов 
 сгенерируйте документацию.
