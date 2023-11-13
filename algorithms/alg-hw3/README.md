@@ -2,8 +2,8 @@
 
 ---
 ## Table of Contents
-* [Two Tasks](./src/main/java/org/example/Main.java)
-
+* [Task One](./src/main/java/org/task1/)
+* [Task Two](./src/main/java/org/task2/)
 ## Tasks
 
 1. уровень сложности: 1. Написать программу, которая 

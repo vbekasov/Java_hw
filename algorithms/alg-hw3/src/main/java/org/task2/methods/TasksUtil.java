@@ -1,4 +1,4 @@
-package org.example.methods;
+package org.task2.methods;
 
 public class TasksUtil {
     private TasksUtil() {}

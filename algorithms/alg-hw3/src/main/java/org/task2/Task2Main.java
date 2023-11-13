@@ -1,8 +1,8 @@
-package org.example;
+package org.task2;
 
-import org.example.methods.TasksUtil;
+import org.task2.methods.TasksUtil;
 
-public class Main {
+public class Task2Main {
     public static void main(String[] args) {
         System.out.println("Tests Sum:");
         System.out.println("sum_loop(7, 2)= " + TasksUtil.sum_loop(7, 2));
