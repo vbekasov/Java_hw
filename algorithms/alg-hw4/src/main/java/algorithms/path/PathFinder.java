@@ -13,12 +13,6 @@ public class PathFinder {
         this.cols = grid[0].length;
     }
 
-    public int findMinCost() {
-
-
-        return 0;
-    }
-
     private void getCost(int x, int y) {
         grid[x][y] += Math.min(grid[x - 1][y], grid[x][y - 1]);
     }
@@ -39,9 +33,11 @@ public class PathFinder {
         }
     }
 
-    public void solve() {
+    public int solve() {
         this.solveEdge();
         this.solveBody();
+
+        return grid[rows - 1][cols - 1];
     }
 
     public void printGrid() {

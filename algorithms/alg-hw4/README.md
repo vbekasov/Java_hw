@@ -4,6 +4,7 @@
 ## Table of content
 * [Main](./src/main/java/algorithms/Main.java)
 * [A* Path Finder Class](./src/main/java/algorithms/path/PathFinder.java)
+* [Util Class](./src/main/java/algorithms/util/ReadGrid.java)
 ## Tasks
 
 * уровень сложности: Решить задачу одним из методов
