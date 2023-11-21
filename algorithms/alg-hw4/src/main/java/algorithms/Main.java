@@ -19,5 +19,7 @@ public class Main {
         System.out.println("====================");
         grid.cutPath();
         grid.printGrid();
+        System.out.println("====================");
+        grid.printRoads();
     }
 }

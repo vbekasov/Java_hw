@@ -27,3 +27,8 @@ int[][] costs = new int[][]{<br>
     {4, 4, 4, 0}};<br>
 
 Результат: minCost(costs) = 5
+
+## Solution
+Algorithm gives minimal cost of movements.
+* `cutPath();` - fills all possible roads with `0`.
+* `printRoads()` - prints all possible roads. !!! Under construction !!!
