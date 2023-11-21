@@ -44,4 +44,36 @@ public class PathFinder {
         for (int i = 0; i < rows; i++)
             System.out.println(Arrays.toString(grid[i]));
     }
+
+    public void cutPath() {
+        supCut(rows - 1, cols - 1);
+        supCutEdge();
+    }
+
+    private void supCut(int x, int y) {
+        if (x != 0 && y != 0)
+            if (grid[x - 1][y] == grid[x][y - 1]) {
+                supCut(x - 1, y);
+                supCut(x, y - 1);
+            } else if (grid[x - 1][y] > grid[x][y - 1]) {
+                supCut(x, y - 1);
+            } else {
+                supCut(x - 1, y);
+            }
+
+        grid[x][y] = 0;
+    }
+
+    private void supCutEdge() {
+        int x = rows - 2;
+        int y = cols - 2;
+
+        for (; x > 0; x--)
+            if (grid[x + 1][0] == 0)
+                grid[x][0] = 0;
+
+        for (; y > 0; y--)
+            if (grid[0][y + 1] == 0)
+                grid[0][y] = 0;
+    }
 }

@@ -16,5 +16,8 @@ public class Main {
         System.out.println("====================");
         System.out.println("Answer : " + grid.solve() + "\n=======");
         grid.printGrid();
+        System.out.println("====================");
+        grid.cutPath();
+        grid.printGrid();
     }
 }
