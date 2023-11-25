@@ -2,7 +2,9 @@ package algorithms;
 
 import algorithms.path.PathFinder;
 import algorithms.util.ReadGrid;
+import chart_tutorial.scatter.ScatterPlot;
 
+import javax.swing.*;
 import java.util.Arrays;
 
 public class Main {
@@ -21,5 +23,15 @@ public class Main {
         grid.printGrid();
         System.out.println("====================");
         grid.printRoads();
+        System.out.println("====================");
+        ScatterPlot ex = new ScatterPlot("Greed", ReadGrid.greedToDataset(grid.getGrid(), (Integer)0, "Ints road"));
+
+        SwingUtilities.invokeLater(
+                () -> {
+                    ex.setSize(800, 400);
+                    ex.setLocationRelativeTo(null);
+                    ex.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                    ex.setVisible(true);
+                });
     }
 }

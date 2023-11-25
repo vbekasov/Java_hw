@@ -1,5 +1,10 @@
 package algorithms.util;
 
+import org.jfree.data.xy.XYDataItem;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -31,5 +36,21 @@ public class ReadGrid {
         }
 
         return grid;
+    }
+
+    public static <T extends Comparable<T>> XYDataset greedToDataset(T[][] arr, T sign, String title) {
+        final int xLen = arr.length;
+        final int yLen = arr[0].length;
+        XYSeriesCollection ser = new XYSeriesCollection();
+        XYSeries s = new XYSeries(title);
+        Number tmp = null;
+
+        for (int i = 0; i < xLen; i++)
+            for (int j = 0; j < yLen; j++)
+                if (arr[i][j].equals(sign))
+                    s.add(i, j);
+
+        ser.addSeries(s);
+        return ser;
     }
 }

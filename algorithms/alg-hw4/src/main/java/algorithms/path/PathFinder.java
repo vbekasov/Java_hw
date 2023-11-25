@@ -1,7 +1,6 @@
 package algorithms.path;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class PathFinder {
     private final int[][] grid;
@@ -58,9 +57,9 @@ public class PathFinder {
         if (x != 0 && y != 0)
             if (grid[x - 1][y] == grid[x][y - 1]) {
                 supCut(x - 1, y, pair.addTop());
-                supCut(x, y - 1, pair.addRight());
+                supCut(x, y - 1, pair.addLeft());
             } else if (grid[x - 1][y] > grid[x][y - 1]) {
-                supCut(x, y - 1, pair.addRight());
+                supCut(x, y - 1, pair.addLeft());
             } else {
                 supCut(x - 1, y, pair.addTop());
             }
@@ -86,21 +85,32 @@ public class PathFinder {
     }
 
     private void supPrintRoads(Pair pair) {
-        if (pair.right != null)
-            supPrintRoads(pair.right);
+        pair.printXY();
+        if (pair.left != null)
+            supPrintRoads(pair.left);
 
         if (pair.top != null)
             supPrintRoads(pair.top);
 
-        pair.printXY();
-        if (pair.top == null && pair.right == null)
+        //pair.printXY();
+        if (pair.top == null && pair.left == null)
             System.out.println("-----");
+    }
+
+    public Integer[][] getGrid() {
+        Integer[][] ret = new Integer[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                ret[i][j] = grid[i][j];
+            }
+        }
+        return ret;
     }
 
     //====================
 
     private class Pair {
-        private Pair right = null;
+        private Pair left = null;
         private Pair top = null;
         private final int x;
         private final int y;
@@ -110,10 +120,10 @@ public class PathFinder {
             this.y = y;
         }
 
-        private Pair addRight() {
-            this.right = new Pair(x, y - 1);
+        private Pair addLeft() {
+            this.left = new Pair(x, y - 1);
 
-            return this.right;
+            return this.left;
         }
 
         private Pair addTop() {
@@ -126,8 +136,8 @@ public class PathFinder {
             System.out.println(x + "\t" + y);
         }
 
-        public Pair getRight() {
-            return right;
+        public Pair getLeft() {
+            return left;
         }
 
         public Pair getTop() {
