@@ -3,11 +3,13 @@ package chart_tutorial.scatter;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
+import java.util.Locale;
 
 public class ScatterPlot extends JFrame {
     private static final long serialVersionUID = 12345L;
@@ -81,7 +83,7 @@ public class ScatterPlot extends JFrame {
         series1.add(4, 96);
 
         dataset.addSeries(series1);
-/*
+
         XYSeries series2 = new XYSeries("Girls");
         series2.add(1, 72.5);
         series2.add(2, 80.1);
@@ -89,12 +91,12 @@ public class ScatterPlot extends JFrame {
         series2.add(4, 94.5);
 
         dataset.addSeries(series2);
-*/
+
         return dataset;
     }
 
 
-/*
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(
                 () -> {
@@ -104,8 +106,7 @@ public class ScatterPlot extends JFrame {
                 ex.setLocationRelativeTo(null);
                 ex.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 ex.setVisible(true);
+
                 });
     }
-
- */
 }

@@ -42,15 +42,21 @@ public class ReadGrid {
         final int xLen = arr.length;
         final int yLen = arr[0].length;
         XYSeriesCollection ser = new XYSeriesCollection();
-        XYSeries s = new XYSeries(title);
-        Number tmp = null;
+        XYSeries road = new XYSeries("road");
+        XYSeries wall = new XYSeries("wall");
 
         for (int i = 0; i < xLen; i++)
             for (int j = 0; j < yLen; j++)
                 if (arr[i][j].equals(sign))
-                    s.add(i, j);
+                    road.add(j, -1 * i);
+                else
+                    wall.add(j, -1 * i);
 
-        ser.addSeries(s);
+        ser.addSeries(road);
+        ser.addSeries(wall);
+        XYSeries tmp = new XYSeries("show");
+        tmp.add(-0.2, 0.2);
+        ser.addSeries(tmp);
         return ser;
     }
 }
