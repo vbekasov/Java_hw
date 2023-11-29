@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.util.Arrays;
 
 public class Main {
-    private static final String PATH = "src/main/java/algorithms/grid.data";
+    private static final String PATH = "src/main/resources/grid.data";
 
     public static void main(String[] args) {
         System.out.println("Hello world!");
