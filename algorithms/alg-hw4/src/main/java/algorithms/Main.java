@@ -23,6 +23,7 @@ public class Main {
         grid.printGrid();
         System.out.println("====================");
         grid.printRoads();
+        grid.fillRoadWithZero();
         System.out.println("====================");
         ScatterPlot ex = new ScatterPlot("Greed", ReadGrid.greedToDataset(grid.getGrid(), (Integer)0, "Ints road"));
 
