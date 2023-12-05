@@ -1,7 +1,9 @@
 # Homework 13
 
 ## Table of Contents
-* [Pizza](./src/main/java/hw13/pizza/Main.java)
+* [Pizza](./src/main/java/hw13/pizza/Pizza.java)
+* [Complex](./src/main/java/hw13/complex/Complex.java)
+* [Trip]
 ## Tasks
 
 1. уровень сложности:
